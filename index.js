@@ -7,12 +7,17 @@
 
 // dependencies
 const http = require('http');
-const {handleReqRes} = require('./helpers/handleReqRes');
+const { handleReqRes } = require('./helpers/handleReqRes');
 const environment = require('./helpers/environments');
-const data = require('./lib/data');
+// const data = require('./lib/data');
+const { sendTwilioSms } = require('./helpers/notifications');
 // app object - module scaffolding
 const app = {};
 
+// todo
+sendTwilioSms('+8801609902765', 'HelloNaushad', (err) => {
+  console.log(`this is the error`, err);
+})
 // configuration
 app.config = {}
 
